@@ -1,0 +1,33 @@
+name: DustFace
+options:
+  bundleIdPrefix: com.dustface
+  deploymentTarget:
+    iOS: «17.0»
+    watchOS: «10.0»
+targets:
+  DustFace:
+    type: application
+    platform: iOS
+    sources: [Phone]
+    dependencies:
+      - target: DustFaceWatch
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.dustface.app
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        MARKETING_VERSION: «1.0»
+        CURRENT_PROJECT_VERSION: «1»
+  DustFaceWatch:
+    type: application
+    platform: watchOS
+    sources: [Watch]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.dustface.app.watchkitapp
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: DustFace
+        INFOPLIST_KEY_WKCompanionAppBundleIdentifier: com.dustface.app
+        INFOPLIST_KEY_WKApplication: YES
+        MARKETING_VERSION: «1.0»
+        CURRENT_PROJECT_VERSION: «1»
